@@ -1,9 +1,11 @@
-This repository contains the content for the [Vagrantbox.es](http://www.vagrantbox.es) website, a
-list of third party base boxes for the lovely Vagrant virtualisation
-tool.
+This repository contains the content for the
+[Betterbox.es](http://www.betterbox.es) website, a 
+well-organized list of third party base boxes for the lovely Vagrant
+virtualisation tool.
 
-The intent behind placing the code here is that anyone who wants to
-update the list can more easily do so simply by sending a pull request.
-The previous iteration used a database and a form, which meant I had to
-look after the content and invariably forgot or didn't have time.
+The intent behind placing the code here is to facilitate discussion of
+the proposed versioning scheme and other ways to improve the sharing
+of base boxes.
 
+It builds on the great work of Gareth Rushgrove's
+[Vagrantbox.es](http://www.vagrantboxes.com).

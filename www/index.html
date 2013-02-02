@@ -1,479 +1,244 @@
 <!DOCTYPE html>
 <head>
   <meta charset=utf-8/>
-  <title>A list of base boxes for Vagrant - Vagrantbox.es</title>
+  <title>A curated list of base boxes for Vagrant - Betterbox.es</title>
   <link rel="stylesheet" href="assets/css/main.css" type="text/css" />
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-435455-15']);
-    _gaq.push(['_trackPageview']);
-    _gaq.push(['_trackPageLoadTime']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
   <script src="assets/sorttable.js"></script>
 </head>
 
 <body>
 
-<a href="https://github.com/garethr/vagrantboxes-heroku"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+<a href="https://github.com/englishm/vagrantboxes-heroku"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
 
 <div id="main">
 
-<h1><a href="/">Vagrantbox.es</a></h1>
+<h1><a href="/">Betterbox.es</a></h1>
 
-<p><a href="http://vagrantup.com">Vagrant</a> is an amazing tool for managing virtual machines via a simple to use command line interface. With a simple <code>vagrant up</code> you can be working in a clean environment based on a standard template.</p>
+<p>This site is intended to build on and complement the work of <a href="http://morethanseven.net/">Gareth Rushgrove</a>. Gareth started <a href="http://vagrantbox.es/">Vagrantbox.es</a>, a large and growing list of publicly-available Vagrant base boxes. This is great thing!</p> 
 
-<p>These standard templates are called <a href="http://vagrantup.com/v1/docs/boxes.html">base boxes</a>, and this website is simply a list of boxes people have been nice enough to make publicly available.</p>
+<p>However...</p>
 
-<h2>Suggest a Box</h2>
+<p>There are some useful conventions I would like to propose base box builders and maintainers to follow. <a href="http://betterbox.es">Betterbox.es</a> is a curated list to encourage the adoption of these conventions.</p>
 
-<p>Do you know of another base box? <a href="http://github.com/garethr/vagrantboxes-heroku">Send a pull request</a> and we'll add it to the list below.</p>
+<p>In the tables below, you will find boxes conforming to a new versioned format, based on and extending the pattern set by the base boxes Opscode provides as part of Bento.</p>
 
-<h2>Available Boxes</h2>
+<h2>Base Base Boxes</h2>
 
-<p>To use the available boxes just replace {title} and {url} with the information in the table below.</p>
+<p>These are intended to be minimal installations of the OS. 
+Beyond that they should only include what is necessary to meet the requirements outlined in the <a href="http://docs.vagrantup.com/v1/docs/base_boxes.html">Vagrant Docs.</a>
+</p>
 
-<pre>
- <span>$ </span>gem install vagrant
- <span>$ </span>vagrant box add {title} {url}
- <span>$ </span>vagrant init {title}
- <span>$ </span>vagrant up
-</pre>
+<h3>Fields</h3>
 
-<p>The list of boxes was last updated on January 19, 2013.</p>
+<dl>
 
-<p><b>NEW</b>: Table is sortable by clicking on the column headers.</p>
+<dt>Box</dt>
+
+<dd>The name for a box follows the same basic structure as the
+     opscode bento boxes (organization namespace, OS name and version)
+     with the addition of a version number for the box itself. This
+     version number has two components: the first represents the
+     version of the veewee definitions used, the second is incremented
+     whenever a new box is built (with updated packages and guest
+     additions).</dd>
+
+<dt>OS</dt>
+
+<dd>Self-explanatory.</dd>
+
+<dt>Arch</dt>
+
+<dd>Self-explanatory.</dd>
+
+<dt>Maintainer</dt>
+
+<dd>Whether an individual or an orgnization, each box should have a
+     designated maintainer.</dd>
+
+<dt>Definitions</dt>
+
+<dd>Link to the definitions used (e.g. a tag in a git repo).</dd>
+
+<dt>Build Date</dt>
+
+<dd>Self-explanatory</dd>
+
+<dt>Changelog</dt>
+
+<dd>Link to the heading in the changelog corresponding to this
+     version of the box. The changelog can include changes to
+     definitions used (major version releases), and changes to packages and
+     guest additions (for minor version releases).</dd>
+
+</dl>
+
+<h3>Red Hat / CentOS Family</h3>
 
 <table class="sortable">
   <thead>
-    <tr><th>Name</th><th>URL</th><th class="sorttable_numeric">Size</th></tr>
+    <tr><th>Box</th><th>OS</th><th>Arch</th><th>Maintainer</th><th>Definitions</th><th>Build Date</th><th>Changelog</th><th class="sorttable_numeric">Size</th></tr>
   </thead>
   <tbody>
   <tr>
-    <th scope="row">Ubuntu Server 12.10 amd64 Minimal (with Puppet, Chef and VirtualBox 4.2.6)</th>
-    <td>https://s3-sa-east-1.amazonaws.com/willian-boxes/Ubuntu-Server-12.10-amd64-Minimal.box</td>
-    <td>354MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian 6 Squeeze x64 configured according to documentation</th>
-    <td>http://www.emken.biz/vagrant-boxes/debsqueeze64.box</td>
-    <td>408MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Heroku Celadon Cedar</th>
-    <td>http://dl.dropbox.com/u/1906634/heroku.box</td>
-    <td>555MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 6.3 x86_64 Minimal (VirtualBox Guest Additions 4.2.6, Chef 10.16.4, Puppet 3.0.2)</th>
-    <td>http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.3-x86_64-v20130101.box</td>
-    <td>455MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 6.3 i386 Minimal (VirtualBox Guest Additions 4.2.6, Chef 10.16.4, Puppet 3.0.2)</th>
-    <td>http://developer.nrel.gov/downloads/vagrant-boxes/CentOS-6.3-i386-v20130101.box</td>
-    <td>386MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Windows Server 2008 R2 - Datacentre full (Puppet, VirtualBox 4.2.4)</th>
-    <td>http://dl.dropbox.com/u/58604/vagrant/win2k8r2.box</td>
-    <td>3541MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Windows Server 2008 R2 - Datacentre core (Puppet, VirtualBox 4.2.4)</th>
-    <td>http://dl.dropbox.com/u/58604/vagrant/win2k8r2-core.box</td>
-    <td>1225MB</td>
-  </tr>
-  <tr>
-    <th scope="row">FreeBSD 9.1 amd64 - UFS (Puppet, Chef, VirtualBox 4.2.6)</th>
-    <td>https://s3.amazonaws.com/VagrantBoxen/freebsd_amd64_ufs.box</td>
-    <td>258.4MB</td>
-  </tr>
-  <tr>
-    <th scope="row">FreeBSD 9.1 amd64 - ZFS (Puppet, Chef, VirtualBox 4.2.6)</th>
-    <td>https://s3.amazonaws.com/VagrantBoxen/freebsd_amd64_zfs.box</td>
-    <td>268.4MB</td>
-  </tr>
-  <tr>
-    <th scope="row">FreeBSD 9.1 amd64 - ZFS on root (Puppet, Chef, VirtualBox 4.1.22)</th>
-    <td>https://github.com/downloads/xironix/freebsd-vagrant/freebsd_amd64_zfs.box</td>
-    <td>263MB</td>
-  </tr>
-  <tr>
-    <th scope="row">FreeBSD 9.1 amd64 - UFS on root (Puppet, Chef, VirtualBox 4.1.22)</th>
-    <td>https://github.com/downloads/xironix/freebsd-vagrant/freebsd_amd64_ufs.box</td>
-    <td>239.4MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Squeeze amd64 (with VirtualBox 4.2.4)</th>
-    <td>http://dl.dropbox.com/u/54390273/vagrantboxes/Squeeze64_VirtualBox4.2.4.box</td>
-    <td>372MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu Server 12.04 amd64 (with Puppet, Chef and VirtualBox 4.2.1)</th>
-    <td>https://s3-sa-east-1.amazonaws.com/willian-boxes/UbuntuServer12.04amd64.box</td>
-    <td>267MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu Server 12.04.1 i868 (VirtualBox 4.2.1)</th>
-    <td>http://dl.dropbox.com/u/4031118/Vagrant/ubuntu-12.04.1-server-i686-virtual.box</td>
-    <td>389MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Squeeze amd64 (with Puppet, Chef and VirtualBox 4.2.1)</th>
-    <td>https://s3-sa-east-1.amazonaws.com/willian-boxes/DebianSqueeze64.box</td>
-    <td>272MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Wheezy amd64 minimal (base install, no puppet, no chef, no ruby, no gems, just an install')</th>
-    <td>https://github.com/downloads/leapcode/minimal-debian-vagrant/wheezy.box</td>
-    <td>380.6MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 12.04 server amd64 (Drupal Ready)</th>
-    <td>http://ubuntuone.com/790qH5nb7cFe2CLQkGiTpz</td>
-    <td>702MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 6.3 x86_64 minimal</th>
-    <td>https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box</td>
-    <td>310MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 6.3 x86_64 + Chef 10.14.2 + VirtualBox 4.1.22 (with guest additions)</th>
-    <td>https://s3.amazonaws.com/itmat-public/centos-6.3-chef-10.14.2.box</td>
-    <td>445MB</td>
-  </tr>
-  <tr>
-    <th scope="row">OmniOS (r151002)</th>
-    <td>http://omnios.omniti.com/media/omnios-latest.box</td>
-    <td>837MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Arch Linux 64 (2012-07-02)</th>
-    <td>http://vagrant.pouss.in/archlinux_2012-07-02.box</td>
-    <td>283MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 11.04 server i386</th>
-    <td>http://dl.dropbox.com/u/7490647/talifun-ubuntu-11.04-server-i386.box</td>
-    <td>372MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 11.04 server amd64</th>
-    <td>http://dl.dropbox.com/u/7490647/talifun-ubuntu-11.04-server-amd64.box</td>
-    <td>390MB</td>
-  </tr>
-  <tr>
-    <th scope="row">OpenSUSE 12.1 64 puppet (until 2012-12-17)</th>
-    <td>https://transfert.inria.fr/fichiers/42187e68fc6312db6856f07e651cd475/vagrant-opensuse-121-64.box</td>
-    <td>500MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Scientific Linux 6 64 chefclient0.10</th>
-    <td>http://download.frameos.org/sl6-64-chefclient-0.10.box</td>
-    <td>459MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Scientific Linux 6 64 chefserver-0.10</th>
-    <td>http://download.frameos.org/sl6-64-chefserver-0.10.box</td>
-    <td>657MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Scientific Linux 6 64 minimal</th>
-    <td>http://lyte.id.au/vagrant/sl6-64-lyte.box</td>
-    <td>376M</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.6 32</th>
-    <td>http://yum.mnxsolutions.com/vagrant/centos_56_32.box</td>
-    <td>804MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Lenny 32 puppet</th>
-    <td>http://s3-eu-west-1.amazonaws.com/glassesdirect-boxen/Debian/Debian_Lenny_32_puppet_backport.box</td>
-    <td>345MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Lenny 32</th>
-    <td>https://s3-eu-west-1.amazonaws.com/glassesdirect-boxen/debian/debian_lenny_32.box</td>
-    <td>351MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Lenny 64 puppet</th>
-    <td>http://puppetlabs.s3.amazonaws.com/pub/debian_lenny_64.box</td>
-    <td>386MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Squeeze 64 with Puppet 2.7</th>
-    <td>http://andrew.mcnaughty.com/downloads/squeeze64_puppet27.box</td>
-    <td>448MB</td>
-  </tr>
-  <tr>
-    <th scope="row">RHEL 6 64 puppet</th>
-    <td>http://puppetlabs.s3.amazonaws.com/pub/rhel60_64.box</td>
-    <td>576MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 4 64 puppet</th>
-    <td>http://puppetlabs.s3.amazonaws.com/pub/centos4_64.box</td>
-    <td>540MB</td>
-  </tr>
-  <tr>
-    <th scope="row">SLES 11sp1 64 puppet</th>
-    <td>http://puppetlabs.s3.amazonaws.com/pub/sles11sp1_64.box</td>
-    <td>665MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Aegir-up Aegir (Debian Stable 64-bit)</th>
-    <td>http://ergonlogic.com/files/boxes/aegir-current.box</td>
-    <td>297MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Aegir-up LAMP (Debian Stable 64-bit)</th>
-    <td>http://ergonlogic.com/files/boxes/debian-LAMP-current.box</td>
-    <td>388MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Aegir-up Debian (Stable 64-bit)</th>
-    <td>http://ergonlogic.com/files/boxes/debian-current.box</td>
-    <td>283MB</td>
-  </tr>
-  <tr>
-    <th scope="row">OpenBSD 5.0 (amd64) puppet chef pkg ports</th>
-    <td>https://github.com/downloads/stefancocora/openbsd_amd64-vagrant/openbsd50_amd64.box</td>
-    <td>279.7MB</td>
-  </tr>
-  <tr>
-    <th scope="row">OpenBSD 5.0 (i386) puppet chef pkg ports</th>
-    <td>https://github.com/downloads/stefancocora/openbsd_i386-vagrant/openbsd50_i386.box</td>
-    <td>266.3MB</td>
-  </tr>
-  <tr>
-    <th scope="row">OpenBSD 5.0 (i386)</th>
-    <td>https://s3-eu-west-1.amazonaws.com/rosstimson-vagrant-boxes/openbsd50-i386.box</td>
-    <td>211MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu Oneiric 64</th>
-    <td>https://github.com/shaftoe/vagrant-ubuntu-oneiric64/raw/master/oneiric64.box</td>
-    <td>324MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.7 64</th>
-    <td>http://www.lyricalsoftware.com/downloads/centos-5.7-x86_64.box</td>
-    <td>521MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.6 64 puppet</th>
-    <td>http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box</td>
-    <td>614MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.6 64 Packages (puppet 2.6.10 &amp; chef 0.10.6 from RPM, VirtualBox 4.2.0)</th>
-    <td>https://dl.dropbox.com/u/7196/vagrant/CentOS-56-x64-packages-puppet-2.6.10-chef-0.10.6.box</td>
-    <td>420MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Minimal CentOS 6.0</th>
-    <td>http://dl.dropbox.com/u/9227672/CentOS-6.0-x86_64-netboot-4.1.6.box</td>
-    <td>362MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Minimal CentOS 5.6</th>
-    <td>http://dl.dropbox.com/u/9227672/centos-5.6-x86_64-netinstall-4.1.6.box</td>
-    <td>277MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Archlinux 2011-08-19</th>
-    <td>http://iweb.dl.sourceforge.net/project/vagrantarchlinx/2011.08.19/archlinux_2011.08.19.box</td>
-    <td>565MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Archlinux 2011.08.19 - 64</th>
-    <td>http://ftp.heanet.ie/mirrors/sourceforge/v/project/va/vagrantarchlinx/2011.08.19/archlinux_2011.08.19.box</td>
-    <td>539MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Gentoo 64</th>
-    <td>http://dl.dropbox.com/u/4270274/gentoo64-0.7.box</td>
-    <td>735MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Gentoo 3.3.8 i686 64</th>
-    <td>http://dl.dropbox.com/u/1212791/gentoo-64-i686-3.3.8.box</td>
-    <td>840MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Opscode ubuntu 10.04</th>
-    <td>http://opscode-vagrant-boxes.s3.amazonaws.com/ubuntu10.04-gems.box</td>
-    <td>367MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Opscode centos 5</th>
-    <td>http://opscode-vagrant-boxes.s3.amazonaws.com/centos5-gems.box</td>
-    <td>458MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu Maverick 64</th>
-    <td>http://mathie-vagrant-boxes.s3.amazonaws.com/maverick64.box</td>
-    <td>515MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.5 64</th>
-    <td>http://dl.dropbox.com/u/15307300/vagrant-0.7-centos-64-base.box</td>
-    <td>499MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian squeeze 32</th>
-    <td>http://mathie-vagrant-boxes.s3.amazonaws.com/debian_squeeze_32.box</td>
-    <td>397MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian squeeze 64</th>
-    <td>http://dl.dropbox.com/u/937870/VMs/squeeze64.box</td>
-    <td>264MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu lucid 32</th>
-    <td>http://files.vagrantup.com/lucid32.box</td>
-    <td>261MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu lucid 64</th>
-    <td>http://files.vagrantup.com/lucid64.box</td>
-    <td>280MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Slackware 13.37</th>
-    <td>http://dl.dropbox.com/u/10544201/slackware-13.37.box</td>
-    <td>2200MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu precise 32</th>
-    <td>http://files.vagrantup.com/precise32.box</td>
-    <td>299MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu precise 64</th>
-    <td>http://files.vagrantup.com/precise64.box</td>
-    <td>323MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu precise 64 with some perl dependencies and few other essentials</th>
-    <td>https://dl.dropbox.com/u/5595111/precise64-kohadeps.box</td>
-    <td>413MB</td>
-  </tr>
-  <tr>
-    <th scope="row">openSuse 12.1 x64</th>
-    <td>https://github.com/jtperry/OpenSuseVagrantBox</td>
-    <td>665MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.8 x86_64</th>
-    <td>https://dl.dropbox.com/u/17738575/CentOS-5.8-x86_64.box</td>
-    <td>957MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 12.04.1 LTS x86_64 (Guest Additions 4.1.18)</th>
-    <td>http://dl.dropbox.com/u/1537815/precise64.box</td>
-    <td>568MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu precise 64 (Ruby 1.9.3 &amp; Chef 10.12)</th>
-    <td>https://dl.dropbox.com/u/14292474/vagrantboxes/precise64-ruby-1.9.3-p194.box</td>
-    <td>892MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 12.10 Quantal x86_64 (Guest Additions 4.2.2)</th>
-    <td>https://github.com/downloads/roderik/VagrantQuantal64Box/quantal64.box</td>
-    <td>402MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Official Ubuntu 12.04 daily Cloud Image amd64 (Guest Additions)</th>
-    <td>http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-vagrant-amd64-disk1.box</td>
-    <td>258M</td>
-  </tr>
-  <tr>
-    <th scope="row">Official Ubuntu 12.04 daily Cloud Image i386 (Guest Additions)</th>
-    <td>http://cloud-images.ubuntu.com/precise/current/precise-server-cloudimg-vagrant-i386-disk1.box</td>
-    <td>258M</td>
-  </tr>
-  <tr>
-    <th scope="row">Official Ubuntu 12.10 daily Cloud Image amd64 (Guest Additions)</th>
-    <td>http://cloud-images.ubuntu.com/quantal/current/quantal-server-cloudimg-vagrant-amd64-disk1.box</td>
-    <td>258M</td>
-  </tr>
-  <tr>
-    <th scope="row">Official Ubuntu 12.10 daily Cloud Image i386 (Guest Additions)</th>
-    <td>http://cloud-images.ubuntu.com/quantal/current/quantal-server-cloudimg-vagrant-i386-disk1.box</td>
-    <td>258M</td>
-  </tr>
-  <tr>
-    <th scope="row">Official Ubuntu 13.04 daily Cloud Image amd64 (Development release, Guest Additions)</th>
-    <td>http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-vagrant-amd64-disk1.box</td>
-    <td>257M</td>
-  </tr>
-  <tr>
-    <th scope="row">Official Ubuntu 13.04 daily Cloud Image i386 (Development release, Guest Additions)</th>
-    <td>http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-vagrant-i386-disk1.box</td>
-    <td>257M</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.8 x86_64 minimal + guest additions, puppet, chef</th>
-    <td>http://tag1consulting.com/files/centos-5.8-x86-64-minimal.box</td>
-    <td>349MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 5.9 x86_64 minimal + guest additions, puppet, chef</th>
-    <td>http://tag1consulting.com/files/centos-5.9-x86-64-minimal.box</td>
-    <td>356MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 12.10 Server Quantal x86_64 (Guest Additions 4.2.2 + Brightbox's Ruby 1.9.3 + Chef (No Puppet))</th>
-    <td>http://static.aldoborrero.com/vagrant/quantal64.box</td>
-    <td>382MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Debian Squeeze 6.0.6 32 - Vanilla (No Ruby, no puppet, only Chef 10.14 from omnibus installer)</th>
-    <td>https://dl.dropbox.com/u/2289657/squeeze32-vanilla.box</td>
-    <td>276MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu Lucid32 lampp, mongodb, git, lithium, rockmongo</th>
-    <td>http://www.hitarthindia.com/VM/lampp-mongo-git-lithium-rock.box</td>
-    <td>568MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu Lucid32 lampp, mongodb, git</th>
-    <td>http://www.hitarthindia.com/VM/lampp-mongo-git.box</td>
-    <td>566MB</td>
-  </tr>
-  <tr>
-    <th scope="row">Ubuntu 10.04.4 LTS Lucid x86_64 (Apache 2.2.14, PHP 5.3.2, MySQL 5.1.66)</th>
-    <td>https://dl.dropbox.com/u/14741389/vagrantboxes/lucid64-lamp.box</td>
-    <td>343MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 6.2 32bit (puppet)</th>
-    <td>https://dl.dropbox.com/sh/9rldlpj3cmdtntc/56JW-DSK35/centos-62-32bit-puppet.box</td>
-    <td>501MB</td>
-  </tr>
-  <tr>
-    <th scope="row">CentOS 6.3 32bit (puppet)</th>
-    <td>https://dl.dropbox.com/sh/9rldlpj3cmdtntc/chqwU6EYaZ/centos-63-32bit-puppet.box</td>
-    <td>651MB</td>
+    <th scope="row"><a href="https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8-i386-x.x.box">opscode-centos-5.8-i386-x.x</a></th>
+    <td>CentOS 5.8</td>
+    <td>x86</td>
+    <td>Opscode</td>
+    <td><a href="https://github.com/opscode/bento/tree/opscode-centos-5.8-i386-x.0">opscode/bento opscode-centos-5.8-i386-x.0</a></td>
+    <td>XXXX-XX-XX</td>
+    <td><a href="https://github.com/opscode/bento/wiki/opscode-centos-5.8-i386#x.x">v x.x</a></td>
+    <td>???MB</td>
+  </tr>
+  <tr>
+    <th scope="row"><a href="https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8-x.x.box">opscode-centos-5.8-x.x</a></th>
+    <td>CentOS 5.8</td>
+    <td>x86</td>
+    <td>Opscode</td>
+    <td><a href="https://github.com/opscode/bento/tree/opscode-centos-5.8-x.0">opscode/bento opscode-centos-5.8-x.0</a></td>
+    <td>XXXX-XX-XX</td>
+    <td><a href="https://github.com/opscode/bento/wiki/opscode-centos-5.8#x.x">v x.x</a></td>
+    <td>???MB</td>
+  </tr>
+  <tr>
+    <th scope="row">...</th>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+  </tbody>
+</table>
+</br>
+
+
+<h3>Debian / Ubuntu Family</h3>
+
+<table class="sortable">
+  <thead>
+    <tr><th>Box</th><th>OS</th><th>Arch</th><th>Maintainer</th><th>Definitions</th><th>Build Date</th><th>Changelog</th><th class="sorttable_numeric">Size</th></tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row"><a href="https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8-i386-x.x.box">opscode-centos-5.8-i386-x.x</a></th>
+    <td>CentOS 5.8</td>
+    <td>x86</td>
+    <td>Opscode</td>
+    <td><a href="https://github.com/opscode/bento/tree/opscode-centos-5.8-i386-x.0">opscode/bento opscode-centos-5.8-i386-x.0</a></td>
+    <td>XXXX-XX-XX</td>
+    <td><a href="https://github.com/opscode/bento/wiki/opscode-centos-5.8-i386#x.x">v x.x</a></td>
+    <td>???MB</td>
+  </tr>
+  <tr>
+    <th scope="row"><a href="https://opscode-vm.s3.amazonaws.com/vagrant/boxes/opscode-centos-5.8-x.x.box">opscode-centos-5.8-x.x</a></th>
+    <td>CentOS 5.8</td>
+    <td>x86</td>
+    <td>Opscode</td>
+    <td><a href="https://github.com/opscode/bento/tree/opscode-centos-5.8-x.0">opscode/bento opscode-centos-5.8-x.0</a></td>
+    <td>XXXX-XX-XX</td>
+    <td><a href="https://github.com/opscode/bento/wiki/opscode-centos-5.8#x.x">v x.x</a></td>
+    <td>???MB</td>
   </tr>
   </tbody>
 </table>
 
+
+<h3>Other</h3>
+
+<table class="sortable">
+  <thead>
+    <tr><th>Box</th><th>OS</th><th>Arch</th><th>Maintainer</th><th>Definitions</th><th>Build Date</th><th>Changelog</th><th class="sorttable_numeric">Size</th></tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">xxx-archlinux-2013.01.04-x.x</th>
+    <td>Arch Linux 2013.01.04</td>
+    <td>x86-64</td>
+    <td>xxx</td>
+    <td>>xxx</td>
+    <td>XXXX-XX-XX</td>
+    <td>v x.x</td>
+    <td>???MB</td>
+  </tr>
+ <tr>
+    <th scope="row">xxx-freebsd-9.1-amd64-x.x</th>
+    <td>FreeBSD 9.1</td>
+    <td>x86-64</td>
+    <td>xxx</td>
+    <td>>xxx</td>
+    <td>XXXX-XX-XX</td>
+    <td>v x.x</td>
+    <td>???MB</td>
+  </tr>
+  <tr>
+    <th scope="row">xxx-omnios-r151004-x.x</th>
+    <td>OmniOS</td>
+    <td>x86-64</td>
+    <td>xxx</td>
+    <td>>xxx</td>
+    <td>XXXX-XX-XX</td>
+    <td>v x.x</td>
+    <td>???MB</td>
+  </tr>
+  <tr>
+    <th scope="row">xxx-openbsd-5.2-x.x</th>
+    <td>OpenBSD</td>
+    <td>x86-64</td>
+    <td>xxx</td>
+    <td>>xxx</td>
+    <td>XXXX-XX-XX</td>
+    <td>v x.x</td>
+    <td>???MB</td>
+  </tr>
+  </tbody>
+</table>
+
+<h2>Derived Base Boxes</h2>
+
+<p>These are base boxes with commonly used packages and configuration
+   pre-provisioned for faster build time.</p>
+
+<p>If you use a default configuration that is time-consuming to
+   provision, it might make sense to export it as a base box.
+   Base boxes like this that are generic enough that they might be
+   useful to others can be added to this list.</p>
+
+<p>Each derived base box should explicitly list its parent (a
+   versioned box from above). Ideally it should also  include a link
+   to the configuration management source used (Puppet manifests, Chef
+   recipes, etc.).</p>
+
+<table class="sortable">
+  <thead>
+    <tr><th>Box</th><th>Parent</th><th>Arch</th><th>Maintainer</th><th>Configuration</th><th>Build Date</th><th>Changelog</th></tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">xxx-railsbase-x.x</a></th>
+    <td>opscode-ubuntu-12.04-2.1</td>
+    <td>x86-64</td>
+    <td>xxx</td>
+    <td>xxx/chef-railsbase</td>
+    <td>XXXX-XX-XX</td>
+    <td>xxx</td>
+  </tr>
+  <tr>
+    <th scope="row">yyy-lampstack-x.x</a></th>
+    <td>opscode-centos-6.3-1.4</td>
+    <td>x86-64</td>
+    <td>xxx</td>
+    <td>yyy/puppet-lampstack</td>
+    <td>XXXX-XX-XX</td>
+    <td>xxx</td>
+  </tr>
+  </tbody>
+</table>
+
+
 <div id="footer">
-  <p>A project from <a href="http://morethanseven.net">Gareth Rushgrove</a>. The design of this site is heavily inspired by the lovely <a href="http://vagrantup.com">Vagrant</a> design by <a href="http://www.simonecarletti.com/">Simone Carletti</a>.</p>
+  <p>A project from <a href="http://twitter.com/gazoombo">Mike English</a> based on a project by <a href="http://morethanseven.net/">Gareth Rushgrove</a>. The design of this site is copied directly from the design of <a href="http://vagrantbox.es/">Vagrantbox.es</a> which in turn was heavily inspired by the lovely <a href="http://vagrantup.com">Vagrant</a> design by <a href="http://www.simonecarletti.com/">Simone Carletti</a>.</p>
 </div>
 
   </div>

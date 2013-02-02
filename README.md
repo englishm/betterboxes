@@ -1,5 +1,5 @@
 This repository contains the content for the
-[Betterbox.es](http://www.betterbox.es) website, a 
+[Betterbox.es](http://betterbox.es) website, a 
 well-organized list of third party base boxes for the lovely Vagrant
 virtualisation tool.
 

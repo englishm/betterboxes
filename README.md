@@ -16,8 +16,8 @@ Looking for more info? See the [wiki](https://github.com/englishm/betterboxes/wi
 
 Want to contribute {ideas, visual design, code, goodwill}? 
    
-   - Find me in IRC on Freenode in #betterboxes
-   - Open an [issue](https://github.com/englishm/betterboxes/issues)
-   - Open a [Pull Request](https://github.com/englishm/betterboxes/pulls)
+   - Find me in IRC on Freenode in [#betterboxes](irc://irc.freenode.net/betterboxes)
+   - Open an [issue](https://github.com/englishm/betterboxes/issues)!
+   - Close an [issue](https://github.com/englishm/betterboxes/issues) with a [Pull Request](https://github.com/englishm/betterboxes/pulls)!
    - Tweet about it!
 

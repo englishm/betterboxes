@@ -1,7 +1,7 @@
 # BetterBox.es
 
 This repository contains the content for the
-[Betterbox.es](http://betterbox.es) website, a 
+[BetterBox.es](http://betterbox.es) website, a 
 well-organized list of third party base boxes for the lovely Vagrant
 virtualisation tool.
 
